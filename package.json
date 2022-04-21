@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "prettier": "2.6.2"
   },
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.17.3"
   }
 }
