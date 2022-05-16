@@ -4,17 +4,33 @@ const path = require('path');
 
 const app = express();
 
+
+
 //Template Engine
 app.set('view engine', 'ejs');
 
+//middlewares
+
 app.use(express.static('public'));
+
 
 const port = 3000;
 
 //ROUTES
 app.get('/', (req, res) => {
-  //res.sendFile(path.resolve(__dirname, 'temp/index.html'));
   res.render('index');
+});
+
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+app.get('/add', (req, res) => {
+  res.render('add');
 });
 
 app.listen(port, () => {
