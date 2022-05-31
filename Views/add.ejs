@@ -1,68 +1,84 @@
-<!--Header-->
 <%- include('partials/_header') -%>
+
 <body>
 	<div class="tm-page-wrap mx-auto">
 		<div class="position-relative">
-			
-            <!--Header-->
-<%- include('partials/_navigation') -%>
-			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-1">
+			<div class="potition-absolute tm-site-header">
+				<div class="container-fluid position-relative">
+					<div class="row">						
+                        <%- include('partials/_navigation') -%>
+					</div>
+				</div>
+			</div>
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-3">
 				<div class="text-center">
-					<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 text-white mx-auto">Background image can be fixed. Content will simply slide over.</p>                	
+					<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 text-white mx-auto">
+                        Talk to Us<br>about any question you have
+                    </p>                	
 				</div>                
             </div>
 
-			<!-- Header image -->
-            <div id="tm-fixed-header-bg"></div> 
+            <div id="tm-fixed-header-bg"></div> <!-- Header image -->
 		</div>
 
 		<!-- Page content -->
-		<div class="container-fluid">
-			<div class="mx-auto tm-content-container">
-				<main>
-					<div class="row mb-5 pb-4">
+		<main>
+			<div class="container-fluid px-0">
+				<div class="mx-auto tm-content-container">					
+					<div class="row mt-3  pb-3">
 						<div class="col-12">
-							<img src="img/video-detail-1.jpg" alt="Image" class="img-fluid tm-catalog-item-img">
-						</div>
-					</div>
-					<div class="row mb-5 pb-5">
-						<div class="col-xl-8 col-lg-7">
-							<!-- Video description -->
-							<div class="tm-video-description-box">
-								<h2 class="mb-5 tm-video-title">Mauris dapibus urna nec ipsum posuere</h2>
-								<p class="mb-4">Cras dictum pretium est, et imperdiet ex. Fusce vitae vestibulum ipsum. Maecenas ultricies ipsum a urna ullamcorper, id interdum est blandit. Vivamus sit amet justo sed erat iaculis consequat. Nulla suscipit posuere lectus ut venenatis. Proin sed orci eget tellus euismod vulputate eu eu arcu.</p>	
+							<div class="mx-auto tm-about-text-container px-3">
+								<h2 class="tm-page-title mb-4 tm-text-primary">Contact our team</h2>
+                                <p class="mb-4">
+                                    Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template ZIP file on any template collection website.
+                                </p>
 							</div>							
-						</div>
-						<div class="col-xl-4 col-lg-5">
-							<!-- Share box -->
-							<div class="tm-bg-gray tm-share-box">
-								<div class="text-center">
-									<button class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Update Details</span></button>	
-								</div>	
-								<div class="text-center">
-									<button class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"><span>Delete Photo</span></button>	
-								</div>								
-							</div>
-						</div>
+						</div>						
 					</div>
-				</main>
+                    <div class="mx-auto pb-3 tm-about-text-container px-3">
+                        <div class="row">
+                            <div class="mx-auto col-lg-12 mb-5">
+                                <form id="contact-form" action="/photos" method="POST" class="tm-contact-form"  encType="multipart/form-data">
+                                  <div class="form-group">
+                                    <input type="text" name="title" class="form-control rounded-0" placeholder="Photo Title" required />
+                                  </div>
+                                  <div class="form-group">
+                                    <textarea rows="8" name="description" class="form-control rounded-0" placeholder="Photo Description"
+                                              required=""></textarea>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                    <input type="file" name="image" class="form-control-file rounded-0" >
+                                  </div>
+                                  
+                                  <div class="form-group mb-0">
+                                    <button type="submit" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
+                                  </div>
+                                </form>    
+                            </div>
+                        </div>  
+                    </div>                                      			
+				</div>
 
-				<!-- Subscribe form and footer links -->
-              <!--Header-->
-<%- include('partials/_footer') -%>
-    <script>
-    	$(document).ready(function() {
-    		$('.tm-likes-box').click(function(e) {
-    			e.preventDefault();
-    			$(this).toggleClass('tm-liked');
+			</div>
+		</main>
 
-    			if($(this).hasClass('tm-liked')) {
-    				$('#tm-likes-count').html('486 likes');
-    			} else {
-    				$('#tm-likes-count').html('485 likes');
-    			}
-    		});
-    	});
-    </script>
+		<div class="container-fluid tm-content-container mx-auto pt-4">
+			<!-- Subscribe form and footer links -->
+            <%- include ('partials/_footer.ejs') %> 
+             <!-- row -->
+            <footer class="row pt-5">
+                <div class="col-12">
+                    <p class="text-right">Copyright 2020 The Video Catalog Company 
+                        
+                        - Designed by <a href="https://templatemo.com" rel="nofollow" target="_parent">TemplateMo</a></p>
+                </div>
+            </footer>
+		</div>		
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/parallax.min.js"></script>    
 </body>
 </html>
